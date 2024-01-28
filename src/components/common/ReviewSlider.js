@@ -38,6 +38,9 @@ const ReviewSlider = () => {
             disableOnInteraction: false,
           }}
           breakpoints={{
+            700: {
+              slidesPerView: 2,
+            },
             1024: {
               slidesPerView: 4,
             },
