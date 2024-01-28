@@ -186,7 +186,7 @@ const VideoDetails = () => {
 
           {videoEnded && (
             <div className="w-full flex items-center justify-between my-2">
-              <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-center gap-3">
                 {!completedLectures.includes(subSectionId) && (
                   <button
                     onClick={handlelectureCompletion}
