@@ -45,7 +45,7 @@ const ViewCourseSideBar = ({ setReviewModal }) => {
   }, [courseSectionData, courseEntireData, location.pathname]);
 
   return (
-    <div className="w-[350px] border-r border-richblack-700 h-[calc(100vh-3.5rem)] bg-richblack-800">
+    <div className="w-[20%] border-r border-richblack-700 h-[calc(100vh-3.5rem)] bg-richblack-800">
       <div className=" mx-5 border-b border-richblack-600 py-3">
         <div className="flex justify-between w-full items-center mt-3">
           <div

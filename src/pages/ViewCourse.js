@@ -38,7 +38,7 @@ const ViewCourse = () => {
   }, []);
   return (
     <>
-      <div className="mt-14 w-full flex">
+      <div className="mt-14 w-full flex flex-col lg:flex-row">
         <ViewCourseSideBar setReviewModal={setReviewModal}></ViewCourseSideBar>
         <div className="h-[calc(100vh-3.5rem)] flex-1 overflow-auto">
           <Outlet></Outlet>
