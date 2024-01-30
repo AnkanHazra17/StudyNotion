@@ -27,6 +27,8 @@ app.use(
   cors({
     origin: "https://study-notion-nu-ten.vercel.app",
     credentials: true,
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    allowedHeaders: "Content-Type,Authorization",
   })
 );
 
