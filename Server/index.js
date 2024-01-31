@@ -12,7 +12,6 @@ const cookieParser = require("cookie-parser");
 const { cloudinaryConnect } = require("./config/cloudinary");
 const fileUpload = require("express-fileupload");
 const cors = require("cors");
-// const fs = require("fs");
 
 require("dotenv").config();
 
@@ -40,20 +39,6 @@ app.use(
   })
 );
 
-// // fs.readFileSync("/temp");
-// const directoryPath = "/temp";
-
-// if (!fs.existsSync(directoryPath)) {
-//   try {
-//     fs.mkdirSync(directoryPath);
-//     console.log("Directory created successfully");
-//   } catch (error) {
-//     console.error("Error creating directory:", error);
-//   }
-// } else {
-//   console.log("Directory already exists");
-// }
-
 // Cloudinary connection
 cloudinaryConnect();
 
@@ -75,5 +60,3 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`App is running at ${PORT}`);
 });
-
-// http://localhost:3000/
