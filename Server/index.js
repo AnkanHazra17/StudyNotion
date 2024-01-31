@@ -12,7 +12,7 @@ const cookieParser = require("cookie-parser");
 const { cloudinaryConnect } = require("./config/cloudinary");
 const fileUpload = require("express-fileupload");
 const cors = require("cors");
-const fs = require("fs");
+// const fs = require("fs");
 
 require("dotenv").config();
 
@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://study-notion-nu-ten.vercel.app",
+    origin: "*",
     credentials: true,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     allowedHeaders: "Content-Type,Authorization",
@@ -36,23 +36,23 @@ app.use(
 app.use(
   fileUpload({
     useTempFiles: true,
-    tempFileDir: "/temp",
+    tempFileDir: "/tmp/",
   })
 );
 
-// fs.readFileSync("/temp");
-const directoryPath = "/temp";
+// // fs.readFileSync("/temp");
+// const directoryPath = "/temp";
 
-if (!fs.existsSync(directoryPath)) {
-  try {
-    fs.mkdirSync(directoryPath);
-    console.log("Directory created successfully");
-  } catch (error) {
-    console.error("Error creating directory:", error);
-  }
-} else {
-  console.log("Directory already exists");
-}
+// if (!fs.existsSync(directoryPath)) {
+//   try {
+//     fs.mkdirSync(directoryPath);
+//     console.log("Directory created successfully");
+//   } catch (error) {
+//     console.error("Error creating directory:", error);
+//   }
+// } else {
+//   console.log("Directory already exists");
+// }
 
 // Cloudinary connection
 cloudinaryConnect();
