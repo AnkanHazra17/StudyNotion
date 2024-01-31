@@ -12,7 +12,7 @@ const cookieParser = require("cookie-parser");
 const { cloudinaryConnect } = require("./config/cloudinary");
 const fileUpload = require("express-fileupload");
 const cors = require("cors");
-const fs = require("fs");
+// const fs = require("fs");
 
 require("dotenv").config();
 
@@ -40,7 +40,7 @@ app.use(
   })
 );
 
-fs.readFileSync("/temp");
+// fs.readFileSync("/temp");
 
 // Cloudinary connection
 cloudinaryConnect();
