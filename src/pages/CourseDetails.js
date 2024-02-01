@@ -92,27 +92,6 @@ const CourseDetails = () => {
     });
   };
 
-  // const handleAddToCart = () => {
-  //   if (user && user?.accountType === ACCOUNT_TYPE.INSTRUCTOR) {
-  //     toast.error("Instructors can't buy a course");
-  //     return;
-  //   }
-
-  //   if (token) {
-  //     dispatch(addToCart(course));
-  //     return;
-  //   }
-
-  //   setConfrimationModal({
-  //     text1: "You are not logged in!",
-  //     text2: "Please login to add To Cart",
-  //     btn1Text: "Login",
-  //     btn2Text: "Cancel",
-  //     btn1Handler: () => navigate("/login"),
-  //     btn2Handler: () => setConfrimationModal(null),
-  //   });
-  // };
-
   const handleAddToCart = () => {
     if (user && user?.accountType === ACCOUNT_TYPE.INSTRUCTOR) {
       toast.error("Instructors can't buy a course");

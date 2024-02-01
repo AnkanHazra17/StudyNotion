@@ -4,8 +4,6 @@ import { BsFillCaretRightFill } from "react-icons/bs";
 import { FaShareSquare } from "react-icons/fa";
 import copy from "copy-to-clipboard";
 import toast from "react-hot-toast";
-import { ACCOUNT_TYPE } from "../../../utils/constants";
-import { addToCart } from "../../../redux/slices/cartSlice";
 import { useNavigate } from "react-router-dom";
 
 const CourseDetailsCard = ({ course, handleAddToCart, handleBuyCourse }) => {
