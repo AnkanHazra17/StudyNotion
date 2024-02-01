@@ -15,6 +15,9 @@ import { HiOutlineGlobeAlt } from "react-icons/hi";
 import { formateDate } from "../services/formateDate";
 import CourseAccordionBar from "../components/core/course/CourseAccordionBar";
 import Footer from "../components/common/Footer";
+import { ACCOUNT_TYPE } from "../utils/constants";
+import toast from "react-hot-toast";
+import { addToCart } from "../redux/slices/cartSlice";
 
 const CourseDetails = () => {
   const { courseId } = useParams();
@@ -82,6 +85,47 @@ const CourseDetails = () => {
     setComfrimationModal({
       text1: "You Are Not Logged In!",
       text2: "Please login to Purchase Course.",
+      btn1Text: "Login",
+      btn2Text: "Cancel",
+      btn1Handler: () => navigate("/login"),
+      btn2Handler: () => setComfrimationModal(null),
+    });
+  };
+
+  // const handleAddToCart = () => {
+  //   if (user && user?.accountType === ACCOUNT_TYPE.INSTRUCTOR) {
+  //     toast.error("Instructors can't buy a course");
+  //     return;
+  //   }
+
+  //   if (token) {
+  //     dispatch(addToCart(course));
+  //     return;
+  //   }
+
+  //   setConfrimationModal({
+  //     text1: "You are not logged in!",
+  //     text2: "Please login to add To Cart",
+  //     btn1Text: "Login",
+  //     btn2Text: "Cancel",
+  //     btn1Handler: () => navigate("/login"),
+  //     btn2Handler: () => setConfrimationModal(null),
+  //   });
+  // };
+
+  const handleAddToCart = () => {
+    if (user && user?.accountType === ACCOUNT_TYPE.INSTRUCTOR) {
+      toast.error("Instructors can't buy a course");
+    }
+
+    if (token) {
+      dispatch(addToCart);
+      return;
+    }
+
+    setComfrimationModal({
+      text1: "You are not logged in!",
+      text2: "Please login to add To Cart",
       btn1Text: "Login",
       btn2Text: "Cancel",
       btn1Handler: () => navigate("/login"),
@@ -159,7 +203,10 @@ const CourseDetails = () => {
                     (!response.courseDetails?.studentsEnrolled.includes(
                       user?._id
                     ) && (
-                      <button className="rounded-md py-2 px-3 font-semibold border border-richblack-700 bg-richblack-800 text-richblack-100">
+                      <button
+                        className="rounded-md py-2 px-3 font-semibold border border-richblack-700 bg-richblack-800 text-richblack-100"
+                        onClick={handleAddToCart}
+                      >
                         Add To Cart
                       </button>
                     ))}
@@ -170,7 +217,7 @@ const CourseDetails = () => {
               <div className="w-[370px] p-4 rounded-xl bg-richblack-800 lg:absolute hidden lg:block right-0 -top-5">
                 <CourseDetailsCard
                   course={response.courseDetails}
-                  setConfrimationModal={setComfrimationModal}
+                  handleAddToCart={handleAddToCart}
                   handleBuyCourse={handleBuyCourse}
                 ></CourseDetailsCard>
               </div>

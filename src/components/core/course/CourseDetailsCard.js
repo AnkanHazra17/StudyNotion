@@ -8,40 +8,13 @@ import { ACCOUNT_TYPE } from "../../../utils/constants";
 import { addToCart } from "../../../redux/slices/cartSlice";
 import { useNavigate } from "react-router-dom";
 
-const CourseDetailsCard = ({
-  course,
-  setConfrimationModal,
-  handleBuyCourse,
-}) => {
+const CourseDetailsCard = ({ course, handleAddToCart, handleBuyCourse }) => {
   const { user } = useSelector((state) => state.profile);
-  const { token } = useSelector((state) => state.auth);
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleShare = () => {
     copy(window.location.href);
     toast.success("Link copied to clipboard");
-  };
-
-  const handleAddToCart = () => {
-    if (user && user?.accountType === ACCOUNT_TYPE.INSTRUCTOR) {
-      toast.error("Instructors can't buy a course");
-      return;
-    }
-
-    if (token) {
-      dispatch(addToCart(course));
-      return;
-    }
-
-    setConfrimationModal({
-      text1: "You are not logged in!",
-      text2: "Please login to add To Cart",
-      btn1Text: "Login",
-      btn2Text: "Cancel",
-      btn1Handler: () => navigate("/login"),
-      btn2Handler: () => setConfrimationModal(null),
-    });
   };
 
   return (
