@@ -58,6 +58,7 @@ const NavBar = () => {
                             .filter((sublink) => sublink?.courses?.length > 0)
                             .map((subLink, i) => (
                               <Link
+                                key={i}
                                 className="z-10 py-2 px-2 rounded-md hover:bg-richblack-50"
                                 to={`/catalog/${subLink.name
                                   .split(" ")
