@@ -95,6 +95,7 @@ const CourseDetails = () => {
   const handleAddToCart = () => {
     if (user && user?.accountType === ACCOUNT_TYPE.INSTRUCTOR) {
       toast.error("Instructors can't buy a course");
+      return;
     }
 
     if (token) {
