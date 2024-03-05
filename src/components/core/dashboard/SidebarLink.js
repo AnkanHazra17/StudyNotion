@@ -2,9 +2,15 @@ import React from "react";
 import * as Icons from "react-icons/vsc";
 import { useLocation, matchPath, NavLink } from "react-router-dom";
 import * as cartIcon from "react-icons/io5";
+import * as categoryicon from "react-icons/bi";
+import * as dataIcon from "react-icons/fa";
 
 const SidebarLink = ({ link, iconName }) => {
-  const Icon = Icons[iconName] || cartIcon[iconName];
+  const Icon =
+    Icons[iconName] ||
+    cartIcon[iconName] ||
+    categoryicon[iconName] ||
+    dataIcon[iconName];
   const location = useLocation();
 
   const matchRoute = (route) => {

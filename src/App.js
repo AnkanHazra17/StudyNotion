@@ -28,6 +28,7 @@ import VideoDetails from "./components/core/viewCourse/VideoDetails";
 import { useEffect } from "react";
 import { getUserDetails } from "./services/operations/userAPI";
 import Instructor from "./components/core/dashboard/InstructorDashboard/Instructor";
+import AddCategory from "./components/core/dashboard/Admin/AddCategory";
 
 function App() {
   const { user } = useSelector((state) => state.profile);
@@ -104,6 +105,16 @@ function App() {
               <Route
                 path="/dashboard/enrolled-courses"
                 element={<EnrolledCourse></EnrolledCourse>}
+              ></Route>
+            </>
+          )}
+
+          {/* Routes for Admin */}
+          {user?.accountType === ACCOUNT_TYPE.ADMIN && (
+            <>
+              <Route
+                path="/dashboard/add-categories"
+                element={<AddCategory></AddCategory>}
               ></Route>
             </>
           )}

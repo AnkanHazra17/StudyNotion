@@ -41,4 +41,18 @@ export const sidebarLinks = [
     type: ACCOUNT_TYPE.STUDENT,
     icon: "IoCartOutline",
   },
+  {
+    id: 7,
+    name: "Add Categories",
+    path: "/dashboard/add-categories",
+    type: ACCOUNT_TYPE.ADMIN,
+    icon: "BiCategory",
+  },
+  {
+    id: 8,
+    name: "All Data",
+    path: "/dashboard/all-data",
+    type: ACCOUNT_TYPE.ADMIN,
+    icon: "FaDatabase",
+  },
 ];

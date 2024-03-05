@@ -48,6 +48,7 @@ export const courseEndpoints = {
     BASE_URL + "/course/getFullCourseDetails",
   LECTURE_COMPLETION_API: BASE_URL + "/course/updateCourseProgress",
   CREATE_RATING_API: BASE_URL + "/course/createRating",
+  CREATE_CATEGORIES_API: BASE_URL + "/course/createCategory",
 };
 
 // CATALOG PAGE DATA

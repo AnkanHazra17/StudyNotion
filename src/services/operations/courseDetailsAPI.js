@@ -18,6 +18,7 @@ const {
   COURSE_DETAILS_API,
   CREATE_RATING_API,
   LECTURE_COMPLETION_API,
+  CREATE_CATEGORIES_API,
 } = courseEndpoints;
 
 // Fetching Available Course Categories
@@ -367,4 +368,25 @@ export const markLectureAsComplete = async (data, token) => {
   }
   toast.dismiss(toastId);
   return result;
+};
+
+// Create Category
+export const createCategory = async (data, token) => {
+  const toastId = toast.loading("Loading...");
+
+  try {
+    const response = await apiConnector("POST", CREATE_CATEGORIES_API, data, {
+      Authorization: `Bearer ${token}`,
+    });
+
+    if (!response?.data?.success) {
+      throw new Error("Could Not Add Category");
+    }
+
+    toast.success("Category Added Successfully");
+  } catch (error) {
+    toast.error(error.message);
+  }
+
+  toast.dismiss(toastId);
 };
