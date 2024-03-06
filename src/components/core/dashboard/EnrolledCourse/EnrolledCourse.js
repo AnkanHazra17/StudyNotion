@@ -35,7 +35,7 @@ const EnrolledCourse = () => {
             {enrolledCourse.map((course, i) => (
               <div
                 key={i}
-                className="cursor-pointer p-6 bg-richblack-800 border border-richblack-700 rounded-md w-full flex items-center justify-between"
+                className="cursor-pointer p-6 bg-richblack-800 border border-richblack-700 rounded-md w-full flex items-start sm:items-center gap-5 flex-col sm:flex-row justify-between"
                 onClick={() =>
                   navigate(
                     `/view-course/${course._id}/section/${course?.courseContent?.[0]?._id}/sub-section/${course?.courseContent?.[0]?.subSection[0]._id}`
@@ -51,8 +51,13 @@ const EnrolledCourse = () => {
 
                   <p>{course.courseName}</p>
                 </div>
-                <div className="flex flex-col w-[40%] gap-2">
-                  <p className=" text-richblack-5">Course Progress:</p>
+                <div className="flex flex-col w-full sm:w-[40%] gap-2">
+                  <p className=" text-richblack-5">
+                    Course Progress:{" "}
+                    <span className=" text-blue-300">
+                      {course.progressPercentage || 0}%
+                    </span>
+                  </p>
                   <ProgressBar
                     completed={course.progressPercentage || 0}
                     height="8px"
