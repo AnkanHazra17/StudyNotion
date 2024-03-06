@@ -29,6 +29,7 @@ import { useEffect } from "react";
 import { getUserDetails } from "./services/operations/userAPI";
 import Instructor from "./components/core/dashboard/InstructorDashboard/Instructor";
 import AddCategory from "./components/core/dashboard/Admin/AddCategory";
+import AppData from "./components/core/dashboard/Admin/AdminDashBoard/AppData";
 
 function App() {
   const { user } = useSelector((state) => state.profile);
@@ -115,6 +116,10 @@ function App() {
               <Route
                 path="/dashboard/add-categories"
                 element={<AddCategory></AddCategory>}
+              ></Route>
+              <Route
+                path="/dashboard/all-data"
+                element={<AppData></AppData>}
               ></Route>
             </>
           )}

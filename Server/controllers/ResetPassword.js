@@ -32,7 +32,7 @@ exports.resetPasswordToken = async (req, res) => {
     );
 
     // Create Url
-    const url = `http://localhost:3000/update-password/${token}`;
+    const url = `https://study-notion-nu-ten.vercel.app/update-password/${token}`;
 
     // Send mail containing the url
     await mailSender(email, "Password reset link", `Link: ${url}`);
