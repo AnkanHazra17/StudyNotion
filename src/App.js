@@ -30,6 +30,7 @@ import { getUserDetails } from "./services/operations/userAPI";
 import Instructor from "./components/core/dashboard/InstructorDashboard/Instructor";
 import AddCategory from "./components/core/dashboard/Admin/AddCategory";
 import AppData from "./components/core/dashboard/Admin/AdminDashBoard/AppData";
+import NotFound from "./pages/NotFound";
 
 function App() {
   const { user } = useSelector((state) => state.profile);
@@ -183,6 +184,8 @@ function App() {
             </OpenRoute>
           }
         ></Route>
+
+        <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
     </div>
   );
