@@ -35,7 +35,7 @@ const AddcategoryForm = () => {
 
   return (
     <form
-      className="w-full sm:w-[500px] flex flex-col gap-4 mt-12"
+      className="w-full sm:w-[500px] flex flex-col gap-4 mt-10"
       onSubmit={handleSubmit(onSubmitHandler)}
     >
       <label>
