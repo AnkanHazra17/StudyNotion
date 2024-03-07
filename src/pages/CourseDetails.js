@@ -93,8 +93,12 @@ const CourseDetails = () => {
   };
 
   const handleAddToCart = () => {
-    if (user && user?.accountType === ACCOUNT_TYPE.INSTRUCTOR) {
-      toast.error("Instructors can't buy a course");
+    if (
+      user &&
+      (user?.accountType === ACCOUNT_TYPE.INSTRUCTOR ||
+        user?.accountType === ACCOUNT_TYPE.ADMIN)
+    ) {
+      toast.error("Instructors or Admins can't buy a course");
       return;
     }
 
