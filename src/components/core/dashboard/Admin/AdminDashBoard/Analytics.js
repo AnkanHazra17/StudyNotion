@@ -1,26 +1,7 @@
 import React from "react";
 import useCategoryCourseData from "../../../../../hooks/useCategoryCourseData";
-import { Bar } from "react-chartjs-2";
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
 import BarGraph from "../../../../common/BarGraph";
 import useCourseAnalyticsData from "../../../../../hooks/useCourseAnalyticsData";
-
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
 
 const Analytics = () => {
   const { isCategoryLoading, categories, curseCount } = useCategoryCourseData();
