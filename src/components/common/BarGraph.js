@@ -1,5 +1,5 @@
 import React from "react";
-import { Bar } from "react-chartjs-2";
+import { Bar, Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -54,12 +54,18 @@ const BarGraph = ({
         display: true,
         text: title,
       },
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
     },
   };
   return (
     <div className="w-full flex flex-col min-h-[450px] p-8 bg-richblack-800 rounded-xl mt-10 border border-richblack-700">
       <p className="text-2xl font-semibold text-white">{header}</p>
-      <Bar data={data} options={options}></Bar>
+      {/* <Bar data={data} options={options}></Bar> */}
+      <Line data={data} options={options}></Line>
     </div>
   );
 };
