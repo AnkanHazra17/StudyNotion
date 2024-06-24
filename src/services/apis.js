@@ -72,4 +72,6 @@ export const ratingsEndpoints = {
 // ANALYTICS ENDPOINTS
 export const analyticsEndpoints = {
   GET_ALL_USERSDATA: BASE_URL + "/analytics/all-user-details",
+  GET_CATEGORY_CURSE_DATA: BASE_URL + "/analytics/category-course-analytics",
+  GET_COURSE_ANALYTICS_DATA: BASE_URL + "/analytics/course-analytice",
 };

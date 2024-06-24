@@ -31,6 +31,7 @@ import Instructor from "./components/core/dashboard/InstructorDashboard/Instruct
 import AddCategory from "./components/core/dashboard/Admin/AddCategory";
 import AppData from "./components/core/dashboard/Admin/AdminDashBoard/AppData";
 import NotFound from "./pages/NotFound";
+import Analytics from "./components/core/dashboard/Admin/AdminDashBoard/Analytics";
 
 function App() {
   const { user } = useSelector((state) => state.profile);
@@ -121,6 +122,10 @@ function App() {
               <Route
                 path="/dashboard/all-data"
                 element={<AppData></AppData>}
+              ></Route>
+              <Route
+                path="/dashboard/analytics"
+                element={<Analytics></Analytics>}
               ></Route>
             </>
           )}
