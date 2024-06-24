@@ -4,13 +4,15 @@ import { useLocation, matchPath, NavLink } from "react-router-dom";
 import * as cartIcon from "react-icons/io5";
 import * as categoryicon from "react-icons/bi";
 import * as dataIcon from "react-icons/fa";
+import * as analyticsIcon from "react-icons/si";
 
 const SidebarLink = ({ link, iconName }) => {
   const Icon =
     Icons[iconName] ||
     cartIcon[iconName] ||
     categoryicon[iconName] ||
-    dataIcon[iconName];
+    dataIcon[iconName] ||
+    analyticsIcon[iconName];
   const location = useLocation();
 
   const matchRoute = (route) => {

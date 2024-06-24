@@ -55,4 +55,11 @@ export const sidebarLinks = [
     type: ACCOUNT_TYPE.ADMIN,
     icon: "FaDatabase",
   },
+  {
+    id: 9,
+    name: "Analytics",
+    path: "/dashboard/analytics",
+    type: ACCOUNT_TYPE.ADMIN,
+    icon: "SiGoogleanalytics",
+  },
 ];

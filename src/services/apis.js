@@ -68,3 +68,8 @@ export const studentEndpoints = {
 export const ratingsEndpoints = {
   REVIEWS_DETAILS_API: BASE_URL + "/course/getReviews",
 };
+
+// ANALYTICS ENDPOINTS
+export const analyticsEndpoints = {
+  GET_ALL_USERSDATA: BASE_URL + "/analytics/all-user-details",
+};
