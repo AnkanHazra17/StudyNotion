@@ -36,8 +36,8 @@ const Analytics = () => {
           labels={categories}
           dataArray={curseCount}
           labelText="Courses"
-          bgColor="#87CEEB"
-          borderColor="#87CEEB"
+          bgColor="#E88D67"
+          borderColor="#E88D67"
           title="Number of course in a caterory"
           header="Course And Category"
         ></BarGraph>
@@ -46,8 +46,8 @@ const Analytics = () => {
           labels={courseNames}
           dataArray={coursePrices}
           labelText="Price"
-          bgColor="#87CEEB"
-          borderColor="#87CEEB"
+          bgColor="#FFB1B1"
+          borderColor="#FFB1B1"
           title="Price of courses"
           header="Course and price"
         ></BarGraph>
@@ -56,8 +56,8 @@ const Analytics = () => {
           labels={courseNames}
           dataArray={studentsCount}
           labelText="Students"
-          bgColor="#87CEEB"
-          borderColor="#87CEEB"
+          bgColor="#E0A75E"
+          borderColor="#E0A75E"
           title="Number of students in a course"
           header="Course and students"
         ></BarGraph>
