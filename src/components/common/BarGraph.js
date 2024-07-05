@@ -8,6 +8,7 @@ import {
   Title,
   Tooltip,
   Legend,
+  scales,
 } from "chart.js";
 
 ChartJS.register(
@@ -45,7 +46,20 @@ const BarGraph = ({
 
   const options = {
     responsive: true,
+    scales: {
+      x: {
+        display: false,
+      },
+    },
     plugins: {
+      tooltip: {
+        callbacks: {
+          title: (tooltipItems) => {
+            // Return the label for the x-axis on hover
+            return tooltipItems[0].label || "";
+          },
+        },
+      },
       legend: {
         position: "top",
         align: "end",
